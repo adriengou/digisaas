@@ -1,0 +1,9 @@
+<section>
+  <form action="">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" [formControl]="name">
+  </form>
+
+  <p>Value: {{name.value}}</p>
+  <button (click)="updateName()">Update Name</button>
+</section>

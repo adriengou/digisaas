@@ -1,0 +1,32 @@
+<!-- [ngClass]="{'SCSSclassName': attributeName}" -->
+<!-- <section class="card" [ngClass]="{
+    'isActive': isActive,
+    'hidden':!shown
+  }" [ngStyle]="{'transform':flipStyle}">
+
+  <div class="title">
+    <img [src]="data.imageUrl" [alt]="'image profil'" />
+    <div class="full_name">
+      <span>{{ data.firstname }}</span>
+      <span>{{ data.name }}</span>
+    </div>
+  </div>
+  <span class="job">{{ data.job }}</span>
+  <div class="footer">
+    <span [appHighlight]="[' yellow', 'red' ]">{{ data.age }} yo,</span>
+    <span [appHighlight]="[' black', 'blue' ]">{{ data.city }}</span>
+  </div>
+</section> -->
+
+<section class="card">
+  <div class="title">
+    <img class="logo" [src]="data.logo">
+    <span class="society">{{data.societyName}}</span>
+    <span class="rating">{{data.rating}}</span>
+  </div>
+  <div class="job">
+    <span class="jobTitle">{{data.jobTitle}}</span>
+    <span class="wage">{{data.wage}}</span>
+  </div>
+  <span class="city">{{data.location}}</span>
+</section>

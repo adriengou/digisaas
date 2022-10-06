@@ -1,0 +1,44 @@
+<div class="center" [hidden]="submitted">
+  <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput id="name" name="name" required [(ngModel)]="model.name" #name="ngModel">
+    </mat-form-field>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
+
+    <mat-form-field>
+      <mat-label>Alter Ego</mat-label>
+      <input matInput id="alterEgo" name="alterEgo" [(ngModel)]="model.alterEgo">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Hero Power</mat-label>
+      <mat-select id="power" name="power" required [(ngModel)]="model.power" #power="ngModel">
+        <mat-option *ngFor="let pow of powers" [value]="pow">{{pow}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div [hidden]="power.valid || power.pristine" class="alert alert-danger">Power is required</div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!heroForm.form.valid"
+      class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div class="center container-fluid" [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-md-3">Name</div>
+    <div class="col-md-9">{{ model.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">Alter Ego</div>
+    <div class="col-md-9">{{ model.alterEgo }}</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">Power</div>
+    <div class="col-md-9">{{ model.power }}</div>
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+
+TODO: remove this: {{model | json}}

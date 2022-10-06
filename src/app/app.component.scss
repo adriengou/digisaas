@@ -1,0 +1,25 @@
+.left,
+.right{
+  outline: 2px solid black;
+}
+
+section{
+  height: 100%;
+}
+
+section>.row{
+  height: 100%;
+}
+
+.row{
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+.navbar{
+  height: 10%;
+}
+
+.main{
+  height: 90%;
+}
