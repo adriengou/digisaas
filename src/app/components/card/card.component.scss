@@ -1,51 +1,55 @@
-.card {
-  font-family: sans-serif;
+// .card {
+//   font-family: sans-serif;
 
-  padding: 5%;
+//   padding: 5%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 15px;
-  border: solid 1px black;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border-radius: 15px;
+//   border: solid 1px black;
 
-  transition: transform 500s ease;
-  transform-style: preserve-3d;
-}
+//   transition: transform 500s ease;
+//   transform-style: preserve-3d;
+// }
 
-.title {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
+// .title {
+//   display: flex;
+//   gap: 15px;
+//   align-items: center;
+// }
 
-.full_name {
-  display: flex;
-  gap: 5px;
-  text-transform: capitalize;
-}
+// .full_name {
+//   display: flex;
+//   gap: 5px;
+//   text-transform: capitalize;
+// }
 
-.footer {
-  display: flex;
-  gap: 10px;
-}
+// .footer {
+//   display: flex;
+//   gap: 10px;
+// }
 
-.job {
-  text-transform: capitalize;
-  font-weight: bolder;
-}
+// .job {
+//   text-transform: capitalize;
+//   font-weight: bolder;
+// }
 
-.isActive {
-  background-color: green;
-}
+// .isActive {
+//   background-color: green;
+// }
 
-.hidden {
-  display: none;
-}
+// .hidden {
+//   display: none;
+// }
 
-img {
-  width: 50px;
-  height: 50px;
+// img {
+//   width: 50px;
+//   height: 50px;
 
-  border-radius: 50%;
+//   border-radius: 50%;
+// }
+
+.avatar {
+  background-size: cover;
 }

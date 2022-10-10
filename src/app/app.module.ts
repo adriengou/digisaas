@@ -20,15 +20,49 @@ import { TemplateDrivenFormDemoComponent } from './components/template-driven-fo
 
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormDemoComponent } from './components/reactive-form-demo/reactive-form-demo.component';
 import { ReactiveFormGroupDemoComponent } from './components/reactive-form-group-demo/reactive-form-group-demo.component';
-
+import { HttpCardComponent } from './components/http-card/http-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, HighlightDirective, MainContentComponent, RemoveDirective, SideBarLeftComponent, SideBarRightComponent, NavbarComponent, ExoComponent, NumbersAveragePipe, BirthdateToAgePipe, TemplateDrivenFormDemoComponent, ReactiveFormDemoComponent, ReactiveFormGroupDemoComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,MatInputModule, CommonModule, FormsModule, MatSelectModule, MatButtonModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    CardComponent,
+    HighlightDirective,
+    MainContentComponent,
+    RemoveDirective,
+    SideBarLeftComponent,
+    SideBarRightComponent,
+    NavbarComponent,
+    ExoComponent,
+    NumbersAveragePipe,
+    BirthdateToAgePipe,
+    TemplateDrivenFormDemoComponent,
+    ReactiveFormDemoComponent,
+    ReactiveFormGroupDemoComponent,
+    HttpCardComponent,
+    ProfileCardComponent,
+    ProfileFormComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    CommonModule,
+    FormsModule,
+    MatSelectModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatCardModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

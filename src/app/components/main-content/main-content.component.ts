@@ -1,8 +1,12 @@
-import { Component, OnInit, NgModule, ElementRef, ViewChild} from '@angular/core';
-import { Job } from 'src/app/models/job.model';
-import { NumberArrayService } from 'src/app/services/number-array.service';
+import {
+  Component,
+  OnInit,
+  NgModule,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 
-
+import { RandomUsersApiService } from '../../services/random-users-api.service';
 
 @Component({
   selector: 'app-main-content',
@@ -10,35 +14,42 @@ import { NumberArrayService } from 'src/app/services/number-array.service';
   styleUrls: ['./main-content.component.scss'],
 })
 export class MainContentComponent implements OnInit {
+  private _cardsData!: any[];
+  private _view!: 'cards' | 'profile';
 
-  cardsData: Job[] = []
-  numberArray = [23, 2, 55, 88, 4]
-  birthdate = new Date();
-  @ViewChild('birthdateInput', { static: true }) birthdateInput!: ElementRef;
-
-  constructor(private service: NumberArrayService) {
-    // this.cardsData.push(new Job('default.png', 'Spotify', 4.8, 'Senior UI/UX', 5000, 'New-Yor, USA'))
-    // this.cardsData.push(new Job('default.png', 'Google', 4.5, 'Senior UI/UX Designer', 100000, 'New-Yor, USA'))
-    // this.cardsData.push(new Job('default.png', 'Youtube', 4.8, 'Senior UI/UX Designer', 5000, 'New-Yor, USA'))
-    // this.cardsData.push(new Job('default.png', 'share', 5, 'Senior Web', 10000, 'Annemase'))
+  constructor(private usersService: RandomUsersApiService) {
+    //default view shown
+    this.showProfile();
   }
 
   ngOnInit(): void {
+    this.usersService.getRandomUsers(1).subscribe((data: any) => {
+      console.log(data);
+      this.cardsData = data.data;
+    });
   }
 
-  changeNumber(index:number){
-    this.numberArray[index] = Math.floor(Math.random() * 100);
-    this.service.changeNumbers(this.numberArray);
+  public get cardsData(): any[] {
+    return this._cardsData;
+  }
+  public set cardsData(value: any[]) {
+    this._cardsData = value;
   }
 
-  setDate(){
-    let inputDate = this.birthdateInput.nativeElement.value;
-
-    if (inputDate) {
-      this.birthdate = new Date(inputDate)
-    }
+  public get view(): 'cards' | 'profile' {
+    return this._view;
+  }
+  public set view(value: 'cards' | 'profile') {
+    this._view = value;
   }
 
+  public showCards() {
+    this.view = 'cards';
+  }
+
+  public showProfile() {
+    this.view = 'profile';
+  }
 }
 
 //directive pour supprimer un élément

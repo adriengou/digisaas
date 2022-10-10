@@ -1,0 +1,33 @@
+<section>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" formControlName="nom">
+
+    <label for="prenom">Prénom</label>
+    <input type="text" id="prenom" formControlName="prenom">
+
+    <label for="birthDate">Date de naissance</label>
+    <input type="date" id="birthDate" formControlName="birthDate">
+
+    <label for="mail">Email</label>
+    <input type="email" id="mail" formControlName="mail">
+
+    <label for="avatar">Avatar</label>
+    <input type="text" id="avatar" formControlName="avatar">
+
+    <!-- skills -->
+    <div formArrayName="skills">
+      <h2>Skills</h2>
+      <button type="button" (click)="addFormSkill()">Ajouter un skill</button>
+
+      <div *ngFor="let skill of formSkills.controls; let i=index">
+        <label for="skill-{{ i }}">Skill {{ i }}</label>
+        <input id="alias-{{ i }}" type="text">
+      </div>
+    </div>
+    <!-- submit button -->
+    <button type="submit">Submit</button>
+  </form>
+</section>

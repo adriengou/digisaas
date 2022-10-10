@@ -1,18 +1,11 @@
-<!-- <section *ngFor="let cardData of cardsData">
-  <app-card [data]="cardData"></app-card>
-</section> -->
-
 <section>
-
-  <div *ngFor="let item of numberArray; let isOdd = odd; let index = index">
-    <app-exo [num]="item" [isOdd]="isOdd" [index]="index" (reloadNumberEvent)="changeNumber($event)"></app-exo>
+  <div *ngIf="view === 'cards'">
+    <div *ngFor="let cardData of cardsData">
+      <app-card class="card" [data]="cardData"></app-card>
+    </div>
   </div>
 
-  <mat-form-field>
-    <input #birthdateInput matInput type="date">
-  </mat-form-field>
-  <button (click)="setDate()">calculer mon age</button>
-
-  <span>Votre age: {{birthdate | birthdateToAge}}</span>
-
+  <div *ngIf="view === 'profile'">
+    <app-profile-form></app-profile-form>
+  </div>
 </section>

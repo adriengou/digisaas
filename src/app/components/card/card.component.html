@@ -19,14 +19,13 @@
 </section> -->
 
 <section class="card">
-  <div class="title">
-    <img class="logo" [src]="data.logo">
-    <span class="society">{{data.societyName}}</span>
-    <span class="rating">{{data.rating}}</span>
-  </div>
-  <div class="job">
-    <span class="jobTitle">{{data.jobTitle}}</span>
-    <span class="wage">{{data.wage}}</span>
-  </div>
-  <span class="city">{{data.location}}</span>
+  <mat-card>
+    <mat-card-header>
+      <div class="avatar" mat-card-avatar [ngStyle]="{'background-image':imageStyle}">
+        <!-- <img [src]="data.avatar" alt=""> -->
+      </div>
+      <mat-card-title>{{data.first_name}} {{data.last_name}}</mat-card-title>
+      <mat-card-subtitle>{{data.email}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
 </section>

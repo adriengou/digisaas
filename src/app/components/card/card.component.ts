@@ -6,23 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-
-  @Input() data!:any;
+  @Input() data!: any;
   isActive: boolean = false;
   shown: boolean = true;
   flipValue: number = 0;
   flipStyle!: string;
+  imageStyle!: string;
 
   constructor() {
     console.log(this.data);
     this.changeBackground();
   }
 
-  ngOnInit(): void {}
-
-  onClick(): void {
-
+  ngOnInit(): void {
+    this.imageStyle = `url('${this.data.avatar}')`;
+    console.log(this.imageStyle);
   }
+
+  onClick(): void {}
 
   changeBackground(): void {
     setTimeout(() => {
