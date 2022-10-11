@@ -46,6 +46,13 @@ export class ProfileFormComponent implements OnInit {
     console.log(this.profileForm.getRawValue());
   }
 
+
+
+
+
+
+
+
   public get formSkills() {
     return this.profileForm.get('skills') as FormArray;
   }
@@ -66,5 +73,15 @@ export class ProfileFormComponent implements OnInit {
   }
   public set profileForm(value: FormGroup) {
     this._profileForm = value;
+  }
+
+
+  /**
+   * @param  {number} a
+   * @param  {number} b
+   * @returns number
+   */
+  public multiply(a:number, b:number):number{
+    return a * b;
   }
 }

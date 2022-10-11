@@ -3,7 +3,7 @@
   outline: 2px solid black;
 }
 
-section{
+section, .center-column{
   height: 100%;
 }
 
@@ -22,4 +22,5 @@ section>.row{
 
 .main{
   height: 90%;
+  overflow: hidden;
 }
